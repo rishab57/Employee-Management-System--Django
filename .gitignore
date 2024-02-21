@@ -1,0 +1,25 @@
+# Ignore database files
+*.sqlite3
+
+# Ignore compiled Python files
+*.pyc
+__pycache__
+
+# Ignore the virtual environment directory
+venv/
+env/
+
+# Ignore local settings (settings.py with sensitive information)
+*/settings_local.py
+
+# Ignore media and static files (uploaded user content and collected static files)
+media/
+staticfiles/
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.swp
+*.swo
+*.DS_Store

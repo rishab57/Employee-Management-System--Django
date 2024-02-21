@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h3>Add An Employee</h3>
+        <form method="POST">
+            {% csrf_token %}
+            
+            {{form}}
+            <button type="submit"> Add Record </button>
+            <!-- <div class="mb-3">
+              <label for="first_name">First Name</label>
+              <input type="text" id="first_name" name="first_name" value="{{first_name}}"><br>
+              <label for="last_name">Last Name</label>
+              <input type="text" id="first_name" name="last_name" value="{{last_name}}"><br>
+              <label for="dept">Department</label>
+              <input type="text" id="dept" name="dept" value="{{dept}}"><br>
+              <label for="salary">Salary</label>
+              <input type="number" id="salary" name="salary" value="{{salary}}"><br>
+              <label for="bonus">Bonus</label>
+              <input type="number" id="bonus" name="bonus" value="{{bonus}}"><br>
+              <label for="role">Role</label>
+              <input type="text" id="role" name="role" value="{{role}}"><br>
+              <label for="phone">Phone no.</label>
+              <input type="text" id="phone" name="phone" value="{{phone}}"><br>
+            <button type="submit" class="btn btn-primary">Add Record</button> -->
+          </form>
+    </div>
+{% endblock %}
