@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <form action="/filter" method="POST">
+            <label for="name" class="form-label">First Name</label>
+            <input type="text" id="name" value="{{ name }}"><br>
+            <label for="dept" class="form-label">Department</label>
+            <input type="text" id="dept" value="{{ dept }}"><br>
+            <label for="role" class="form-label">Role</label>
+            <input type="text" id="role" value="{{ role }}"><br>
+            <button type="submit" class="btn btn-primary">Filter Record</button>    
+        </form>
+    </div>
+{% endblock %}

@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import *
 from .forms import EmpForm
 from datetime import datetime
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -54,5 +55,24 @@ def delete(request, emp_id = 0):
     return render(request, 'delete-emp.html',context )
 
 def filter(request):
-    
-    return render(request, 'filter-emp.html')
+    if request.method == ' POST':
+        name = request.POST['name']
+        dept = request.POST['dept']
+        role = request.POST['role']
+        emps = Employee.objects.all()
+        if name:
+            emps = emps.filter(Q(first_name__icontains = name) | Q(last_name__icontains = name))
+        if dept:
+            emps = emps.filter(dept__name = dept)
+        if role:
+            emps = emps.filter(role__name = dept)
+
+        context = {
+            'emps' : emps
+        }
+   
+        return render(request, 'view-all.html',context)
+    elif request.method == 'GET':
+        return render(request, 'filter-emp.html')
+    else:
+        return HttpResponse('An Exception occured.')
